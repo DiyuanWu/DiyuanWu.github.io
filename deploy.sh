@@ -8,7 +8,7 @@ set -e
 # build
 make clean
 make
-make search
+#make search
 
 # navigate into the build output directory
 cd html
@@ -21,7 +21,7 @@ git add -A
 git commit -m 'deploy'
 
 # if you are deploying to https://<USERNAME>.github.io
-git push -f git@github.com:dev10110/dev10110.github.io.git master:gh-pages
+git push -f git@github.com:DiyuanWu/DiyuanWu.github.io.git main:gh-pages
 
 # if you are deploying to https://<USERNAME>.github.io/<REPO>
 # git push -f git@github.com:dev10110/jemdoc_dev.git master:gh-pages
