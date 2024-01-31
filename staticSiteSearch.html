@@ -5,7 +5,7 @@
 <meta name="generator" content="jemdoc, see http://jemdoc.jaboc.net/" />
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Publications and Preprints</title>
+<title>Free and Easy Static Site Search for Jemdoc</title>
 <!-- MathJax -->
 <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML' async>
 </script>
@@ -30,36 +30,33 @@ MathJax.Hub.Config({
 <div class="col s12 l3" id="layout-menu"><div class="divider" style="margin-bottom:1rem; margin-top:2rem"></div><section>
 <div class="menu-category">Menu</div>
 <div class="menu-item"><a href="index.html">Home</a></div>
-<div class="menu-item"><a href="./html/publications.html" class="current">Publications</a></div>
+<div class="menu-item"><a href="./html/publications.html">Publications</a></div>
 </section><div class="divider" style="margin-bottom:2rem; margin-top:1rem"></div>
 </div>
 <div class="col s12 l9" id="mainContentArea">
 <div id="toptitle">
-<h1>Publications and Preprints</h1>
+<h1>Free and Easy Static Site Search for Jemdoc</h1>
 </div>
-<p><a href="https://scholar.google.com/citations?user=MztcJLMAAAAJ&amp;hl=zh-CN" target=&ldquo;blank&rdquo;>Google Scholar Page</a>
+<p>4 Sept 2020
 </p>
-<p><b>2023</b>
+<img src="assets/blog/search.gif" /><p>I implemented a simple search on this static site using <a href="https://lunrjs.com" target=&ldquo;blank&rdquo;>LunrJS</a>. The code was lifted from <a href="https://github.com/BLE-LTER/Lunr-Index-and-Search-for-Static-Sites" target=&ldquo;blank&rdquo;>https:<i></i>github.com<i>BLE-LTER</i>Lunr-Index-and-Search-for-Static-Sites</a>  and was pretty easy to implement with JEMDOC!
 </p>
-<ul class="browser-default">
-<li><p><b>Mean-field analysis for heavy ball methods: Dropout-stability, connectivity, and global convergence</b><br />
-Diyuan Wu, Vyacheslav Kungurtsev, Marco Mondelli<br />
-TMLR 2023  <a href="https://openreview.net/forum?id=gZna3IiGfl" target=&ldquo;blank&rdquo;>(Link)</a> <br />
+<p>After compiling Jemdoc, I run <tt>make search</tt> which creates an index of all my files using the <tt>html</tt> folder. The actual search and javascript-based display is handled by Lunr. It was surprisingly fast and easy to setup, and free!!
 </p>
-</li>
-</ul>
-<p><b>2021</b>
-</p>
-<ul class="browser-default">
-<li><p><b>On conditional Sibson's  \(\alpha\)-Mutual Information</b> <br />
-Amedeo Roberto Esposito, Diyuan Wu, Michael Gastpar <br />
-ISIT 2021 <a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=9517944" target=&ldquo;blank&rdquo;>(Link)</a>
-</p>
-</li>
-</ul>
+<div class="codeblock">
+<div class="blocktitle">Makefile (just the search part)</div>
+<div class="blockcontent"><pre>
+# to make the search functionality
+.PHONY search:
+search:
+	# run the search index
+	node build_index.js
+	mv lunr_index.js html/lunr_index.js
+	cp lunr_client.js html
+</pre></div></div>
 <div id="footer">
 <div id="footer-text">
-Page generated 2024-01-31 14:51:34 CET, by <a href="https://dev10110.github.io/jemdocMathJaxMaterialize.html" target="blank">jemdoc+MathJax+Materialize docs</a>, <a href="https://github.com/dev10110/dev10110.github.io">Github</a>
+Page generated 2024-01-31 14:53:14 CET, by <a href="https://dev10110.github.io/jemdocMathJaxMaterialize.html" target="blank">jemdoc+MathJax+Materialize docs</a>, <a href="https://github.com/dev10110/dev10110.github.io">Github</a>
 </div>
 </div>
 </div>

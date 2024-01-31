@@ -5,7 +5,7 @@
 <meta name="generator" content="jemdoc, see http://jemdoc.jaboc.net/" />
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mind The Gap</title>
+<title>Python Environments</title>
 <!-- MathJax -->
 <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML' async>
 </script>
@@ -35,21 +35,42 @@ MathJax.Hub.Config({
 </div>
 <div class="col s12 l9" id="mainContentArea">
 <div id="toptitle">
-<h1>Mind The Gap</h1>
+<h1>Python Environments</h1>
 </div>
-<img src="assets/projects/MindTheGap-cover.png" /><img src="assets/projects/MindTheGap-howItWorks.png" /><p>Mind The Gap is a smartphone app I developed during my internship with HackPartners, over the summer of 2020.
+<p>27 Aug 2020
 </p>
-<p>The app was designed to aid with social distancing. It can measure the distance between devices over 2 meters away with an accuracy of 8.5&nbsp;cm. 
+<p>I prefer to use Conda for managing my virtual environments.
 </p>
-<p>I specifically worked on designing the audio processing stack and designing the algorithm to allow for a scalable application. 
-</p>
-<p>I also wrote a paper detailing the technical aspects of the application, <a href="https://arxiv.org/abs/2008.13564" target=&ldquo;blank&rdquo;>available at Arxiv</a>.
-</p>
-<p>Get the app at <a href="https://mindthegap.today" target=&ldquo;blank&rdquo;>MindTheGap.today</a>
-</p>
+<div class="codeblock">
+<div class="blocktitle">Creating</div>
+<div class="blockcontent"><pre>
+conda create --name envName python=3.8
+conda activate envName
+...
+conda deactivate envName
+</pre></div></div>
+<div class="codeblock">
+<div class="blocktitle">Export environment</div>
+<div class="blockcontent"><pre>
+conda env export &gt; environment.yml
+</pre></div></div>
+<div class="codeblock">
+<div class="blocktitle">Activate from env file</div>
+<div class="blockcontent"><pre>
+conda env create -f environment.yml
+</pre></div></div>
+<div class="codeblock">
+<div class="blocktitle">Adding jupyter to the environment</div>
+<div class="blockcontent"><pre>
+conda activate envName
+pip install --user ipykernel
+python -m ipykernel install --user --name=envName
+conda install jupyter
+jupyter notebook
+</pre></div></div>
 <div id="footer">
 <div id="footer-text">
-Page generated 2024-01-31 14:51:34 CET, by <a href="https://dev10110.github.io/jemdocMathJaxMaterialize.html" target="blank">jemdoc+MathJax+Materialize docs</a>, <a href="https://github.com/dev10110/dev10110.github.io">Github</a>
+Page generated 2024-01-31 14:53:14 CET, by <a href="https://dev10110.github.io/jemdocMathJaxMaterialize.html" target="blank">jemdoc+MathJax+Materialize docs</a>, <a href="https://github.com/dev10110/dev10110.github.io">Github</a>
 </div>
 </div>
 </div>

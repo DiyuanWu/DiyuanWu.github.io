@@ -5,7 +5,7 @@
 <meta name="generator" content="jemdoc, see http://jemdoc.jaboc.net/" />
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>rocketPy</title>
+<title>Publications and Preprints</title>
 <!-- MathJax -->
 <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML' async>
 </script>
@@ -30,29 +30,36 @@ MathJax.Hub.Config({
 <div class="col s12 l3" id="layout-menu"><div class="divider" style="margin-bottom:1rem; margin-top:2rem"></div><section>
 <div class="menu-category">Menu</div>
 <div class="menu-item"><a href="index.html">Home</a></div>
-<div class="menu-item"><a href="./html/publications.html">Publications</a></div>
+<div class="menu-item"><a href="./html/publications.html" class="current">Publications</a></div>
 </section><div class="divider" style="margin-bottom:2rem; margin-top:1rem"></div>
 </div>
 <div class="col s12 l9" id="mainContentArea">
 <div id="toptitle">
-<h1>rocketPy</h1>
+<h1>Publications and Preprints</h1>
 </div>
-<img src="assets/projects/rocketPy-cover.png" /><p>While openRocket is a standard hobbyist rocket design and analysis tool, its built in Java and has limitations when it comes to easily extending the software.
+<p><a href="https://scholar.google.com/citations?user=MztcJLMAAAAJ&amp;hl=zh-CN" target=&ldquo;blank&rdquo;>Google Scholar Page</a>
 </p>
-<p>There are other softwares out there (some not free) but I couldn’t find a good pythonic implementation that met my specific need - to be able to test the robustness of a custom throttle controller designed by the ICLR team.
+<p><b>2023</b>
 </p>
-<p>As such, I turned to CambridgeRocket, which has been implemented in MATLAB. Unfortunately, (not only due to MATLAB’s limitations) it is very poorly written, passing random structs with names as generic as INTAB1 INTAB2, INTAB3 etc around.
+<ul class="browser-default">
+<li><p><b>Mean-field analysis for heavy ball methods: Dropout-stability, connectivity, and global convergence</b><br />
+Diyuan Wu, Vyacheslav Kungurtsev, Marco Mondelli<br />
+TMLR 2023  <a href="https://openreview.net/forum?id=gZna3IiGfl" target=&ldquo;blank&rdquo;>(Link)</a> <br />
 </p>
-<p>It also didn’t expose a method to implement and test a live controller.
+</li>
+</ul>
+<p><b>2021</b>
 </p>
-<p>However, the technical documentation and two papers published on the project are quite well written and make sense. As such, I have decided to implement them myself in python, and test my team’s code on a simulator I built and therefore know the inner workings of.
+<ul class="browser-default">
+<li><p><b>On conditional Sibson's  \(\alpha\)-Mutual Information</b> <br />
+Amedeo Roberto Esposito, Diyuan Wu, Michael Gastpar <br />
+ISIT 2021 <a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=9517944" target=&ldquo;blank&rdquo;>(Link)</a>
 </p>
-<p>A key aspect to rocketPy will be its ability to solve the stochastic differential equations, which scipy does not have good implementations of. I havent yet decided if I want to learn and implement this myself, use RK4 and allow for random noise within scipy’s API, or to use a relatively ugly hack to get around this. I’ll play around with these ideas once I’m at that stage :)
-</p>
-<p>The current working GitHub repository is <a href="https://github.com/dev10110/rocketPy" target=&ldquo;blank&rdquo;>here</a>, and I’m hoping to make it into a full open-source package at some point that others can modify.</p>
+</li>
+</ul>
 <div id="footer">
 <div id="footer-text">
-Page generated 2024-01-31 14:51:34 CET, by <a href="https://dev10110.github.io/jemdocMathJaxMaterialize.html" target="blank">jemdoc+MathJax+Materialize docs</a>, <a href="https://github.com/dev10110/dev10110.github.io">Github</a>
+Page generated 2024-01-31 14:53:14 CET, by <a href="https://dev10110.github.io/jemdocMathJaxMaterialize.html" target="blank">jemdoc+MathJax+Materialize docs</a>, <a href="https://github.com/dev10110/dev10110.github.io">Github</a>
 </div>
 </div>
 </div>

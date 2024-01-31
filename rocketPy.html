@@ -5,7 +5,7 @@
 <meta name="generator" content="jemdoc, see http://jemdoc.jaboc.net/" />
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Free and Easy Static Site Search for Jemdoc</title>
+<title>rocketPy</title>
 <!-- MathJax -->
 <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML' async>
 </script>
@@ -35,28 +35,24 @@ MathJax.Hub.Config({
 </div>
 <div class="col s12 l9" id="mainContentArea">
 <div id="toptitle">
-<h1>Free and Easy Static Site Search for Jemdoc</h1>
+<h1>rocketPy</h1>
 </div>
-<p>4 Sept 2020
+<img src="assets/projects/rocketPy-cover.png" /><p>While openRocket is a standard hobbyist rocket design and analysis tool, its built in Java and has limitations when it comes to easily extending the software.
 </p>
-<img src="assets/blog/search.gif" /><p>I implemented a simple search on this static site using <a href="https://lunrjs.com" target=&ldquo;blank&rdquo;>LunrJS</a>. The code was lifted from <a href="https://github.com/BLE-LTER/Lunr-Index-and-Search-for-Static-Sites" target=&ldquo;blank&rdquo;>https:<i></i>github.com<i>BLE-LTER</i>Lunr-Index-and-Search-for-Static-Sites</a>  and was pretty easy to implement with JEMDOC!
+<p>There are other softwares out there (some not free) but I couldn’t find a good pythonic implementation that met my specific need - to be able to test the robustness of a custom throttle controller designed by the ICLR team.
 </p>
-<p>After compiling Jemdoc, I run <tt>make search</tt> which creates an index of all my files using the <tt>html</tt> folder. The actual search and javascript-based display is handled by Lunr. It was surprisingly fast and easy to setup, and free!!
+<p>As such, I turned to CambridgeRocket, which has been implemented in MATLAB. Unfortunately, (not only due to MATLAB’s limitations) it is very poorly written, passing random structs with names as generic as INTAB1 INTAB2, INTAB3 etc around.
 </p>
-<div class="codeblock">
-<div class="blocktitle">Makefile (just the search part)</div>
-<div class="blockcontent"><pre>
-# to make the search functionality
-.PHONY search:
-search:
-	# run the search index
-	node build_index.js
-	mv lunr_index.js html/lunr_index.js
-	cp lunr_client.js html
-</pre></div></div>
+<p>It also didn’t expose a method to implement and test a live controller.
+</p>
+<p>However, the technical documentation and two papers published on the project are quite well written and make sense. As such, I have decided to implement them myself in python, and test my team’s code on a simulator I built and therefore know the inner workings of.
+</p>
+<p>A key aspect to rocketPy will be its ability to solve the stochastic differential equations, which scipy does not have good implementations of. I havent yet decided if I want to learn and implement this myself, use RK4 and allow for random noise within scipy’s API, or to use a relatively ugly hack to get around this. I’ll play around with these ideas once I’m at that stage :)
+</p>
+<p>The current working GitHub repository is <a href="https://github.com/dev10110/rocketPy" target=&ldquo;blank&rdquo;>here</a>, and I’m hoping to make it into a full open-source package at some point that others can modify.</p>
 <div id="footer">
 <div id="footer-text">
-Page generated 2024-01-31 14:51:34 CET, by <a href="https://dev10110.github.io/jemdocMathJaxMaterialize.html" target="blank">jemdoc+MathJax+Materialize docs</a>, <a href="https://github.com/dev10110/dev10110.github.io">Github</a>
+Page generated 2024-01-31 14:53:14 CET, by <a href="https://dev10110.github.io/jemdocMathJaxMaterialize.html" target="blank">jemdoc+MathJax+Materialize docs</a>, <a href="https://github.com/dev10110/dev10110.github.io">Github</a>
 </div>
 </div>
 </div>
