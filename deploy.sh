@@ -11,7 +11,7 @@ make
 #make search
 
 # navigate into the build output directory
-cd html
+cp -rf ./html/index.html ./index.html
 
 # if you are deploying to a custom domain
 # echo 'www.example.com' > CNAME
@@ -21,9 +21,7 @@ git add -A
 git commit -m 'deploy'
 
 # if you are deploying to https://<USERNAME>.github.io
-git push -f git@github.com:DiyuanWu/DiyuanWu.github.io.git main:gh-pages
+git push -u origin main
 
-# if you are deploying to https://<USERNAME>.github.io/<REPO>
-# git push -f git@github.com:dev10110/jemdoc_dev.git master:gh-pages
 
 cd -
