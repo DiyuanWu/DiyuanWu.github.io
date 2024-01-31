@@ -1,22 +1,20 @@
 # jemdoc: menu{MENU}{index.html}
-= Diyuan
+= Diyuan Wu
 
 {{<img src="assets/me.jpg" id="me", class="circle">}}
 
 
 
-== Education
+== Introduction
 
-- Aerospace Engineering, University of Michigan, PhD (in progress)
-- Aeronautical Engineering with a Year Abroad, Imperial College London, Massachusetts Institute of Technology, MEng
+My name is Diyuan Wu (吴迪远  in Chinese), I'm currently a PhD student in [https://ist.ac.at/en/home/  Institute of Science and Technology Austria (ISTA)    ]. I'm very fortunate to be supervised by Professor [http://marcomondelli.com/  Marco Mondelli ]. I'm boardly interested in theory of (deep) machine learning, especially understanding dynamical properties in learning problems. Currently my focus are on: 
+- Data privacy in training neural networks, especially in mean-field regime
+- Understanding training dynamics for transformer models
+ 
+Prior to my PhD journey in ISTA, I received a master degree in communication system from [https://www.epfl.ch/en/  École Polytechnique Fédérale de Lausanne(EPFL)] in 2022, and bachelor degree in information and communication engineering from [https://en.uestc.edu.cn/  UESTC(电子科大)] in 2019. 
 
-== Contact
-[mailto:devansh@umich.edu {{<i class="fa fa-envelope" aria-hidden="true"></i>}} Email]
 
-[https://github.com/dev10110 {{<i class="fa fa-github" aria-hidden="true"></i>}} Github]
+=== Contact information
+*Email*: [mailto:diyuan.wu@ista.ac.at.com {{<i class="fa fa-envelope" aria-hidden="true"></i>}} diyuan.wu@ista.ac.at.com]
 
-[https://www.linkedin.com/in/devansh-r-agrawal/ {{<i class="fa fa-linkedin" aria-hidden="true"></i>}} LinkedIn]
-
-[https://orcid.org/0000-0002-0236-9077 {{<i class="ai ai-orcid ai"></i>}} ORCID]
-
-[https://scholar.google.co.uk/citations?user=0R2CO0wAAAAJ&hl=en {{<i class="ai ai-google-scholar ai"></i>}} Google Scholar]
+*Address*: I21.O1.112, Am Campus 1, Klosterneuburg, AT-3400
