@@ -513,7 +513,9 @@ def doincludes(f, l):
 
 def nl(f, withcount=False, codemode=False):
   """Get input file line."""
+
   s = f.inf.readline().decode('utf-8')
+  
   if not s and f.otherfiles:
     f.nextfile()
     return nl(f, withcount, codemode)
@@ -532,16 +534,22 @@ def nl(f, withcount=False, codemode=False):
       m = r'\.'
     else:
       m = s[0]
-
+      
     r = re.match('(%s+) ' % m, s)
+
+
     if not r:
+      
       raise SyntaxError("couldn't handle the jandal (code 12039) on line"
                 " %d" % f.linenum)
 
     if not codemode:
       s = s.lstrip('-.=:')
 
+
+
     return (s, len(r.group(1)))
+
   else:
     if not codemode:
       s = s.lstrip('-.=:')
