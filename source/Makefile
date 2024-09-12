@@ -4,11 +4,11 @@ build :
 
 	echo "  *** Deleting and recreating HTML directory"
 	mkdir -p html
-	cp jemdoc.css html
+	cp jemdoc_new.css html
 	cp -r src/assets html
 	echo "  *** BUILDING FILES"
 	
-	cd src && python ../jemdoc -c mysite.conf -o ../html/ *.jemdoc
+	cd src && python3 ../jemdoc -c mysite.conf -o ../html/ *.jemdoc
 
 	
 
