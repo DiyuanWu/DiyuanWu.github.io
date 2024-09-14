@@ -177,10 +177,10 @@ h6{
 }
 
 img {
-	max-width: min(100%, 700px) !important;
+	max-width: min(80%, 500px) !important;
 	height: auto;
 }
 
 #me {
-	max-width: min(60%, 300px) !important;
+	max-width: min(20%, 100px) !important; /* Adjusted max-width */
 }
