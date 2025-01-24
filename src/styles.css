@@ -35,6 +35,9 @@ p {
     position: sticky;
     top: 0;
     z-index: 100;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
 }
 
 #menu-toggle {
@@ -56,31 +59,6 @@ p {
     flex-direction: row;
 }
 
-#layout-menu li {
-    list-style: none;
-    white-space: nowrap;
-}
-
-#layout-menu a[href="index.html"]::before {
-    content: "Home";
-}
-
-#layout-menu a[href="index.html"] {
-    pointer-events: none;
-    cursor: default;
-    order: -1;
-}
-
-#layout-content {
-    order: 2;
-    width: 100%;
-    padding: 1vw;
-    margin: 0;
-    box-sizing: border-box;
-    max-width: var(--max-content-width);
-    margin: 0 auto;
-}
-
 /* Mobile styles */
 @media (max-width: 767px) {
     #menu-toggle {
@@ -93,6 +71,7 @@ p {
         width: 100%;
         background: #f8f8f8;
         padding: 0.5rem 0;
+        margin-top: 0.5rem;
     }
     
     #layout-menu.active ul {
@@ -101,6 +80,7 @@ p {
     
     #layout-menu li {
         padding: 0.5rem 1rem;
+        width: 100%;
     }
 }
 
