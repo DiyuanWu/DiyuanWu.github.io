@@ -32,16 +32,19 @@
         document.addEventListener('DOMContentLoaded', function() {
             const menuToggle = document.getElementById('menu-toggle');
             const menu = document.getElementById('layout-menu');
+            const menuList = menu.querySelector('ul');
             
-            if (menuToggle && menu) {
-                menuToggle.addEventListener('click', function() {
-                    menu.classList.toggle('active');
+            if (menuToggle && menu && menuList) {
+                menuToggle.addEventListener('click', function(event) {
+                    event.stopPropagation(); // Prevent event from bubbling up
+                    menuList.style.display = menuList.style.display === 'block' ? 'none' : 'block';
+                    menuList.style.flexDirection = 'column';
                 });
                 
                 // Close menu when clicking outside
                 document.addEventListener('click', function(event) {
                     if (!menu.contains(event.target) && !menuToggle.contains(event.target)) {
-                        menu.classList.remove('active');
+                        menuList.style.display = 'none';
                     }
                 });
             }
