@@ -5,29 +5,38 @@ import shutil
 import re
 from datetime import datetime
 
-# Global HTML template with MathJax support
+# Global HTML template with MathJax support and responsive design
 HTML_TEMPLATE = """<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{title}</title>
+    <title>{my_title}</title>
     <link rel="stylesheet" href="styles.css">
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
     <div id="layout-menu">
+        <button id="menu-toggle" aria-label="Toggle menu">☰</button>
         <ul>
-            {menu_items}
+            {my_menu_items}
         </ul>
     </div>
     <div id="layout-content">
-        {content}
+        {my_content}
         <div id="footer">
-            Last updated: {update_time}
+            Last updated: {my_update_time}
         </div>
     </div>
+    <script>
+        // Toggle menu for mobile devices
+        const menuToggle = document.getElementById('menu-toggle');
+        const menu = document.getElementById('layout-menu');
+        menuToggle.addEventListener('click', () => {{
+            menu.classList.toggle('active');
+        }});
+    </script>
 </body>
 </html>"""
 
@@ -47,6 +56,9 @@ def convert_md_to_html(md_content, title, menu_items):
     # Convert markdown to HTML with math extensions
     html_content = markdown.markdown(md_content, extensions=['fenced_code', 'tables'])
     
+    # Escape curly braces in both content and menu items
+    
+    
     # Replace single '-' with <br> for line breaks
     html_content = '\n'.join(
         f'<br>{line[1:]}' if line.startswith('-') else line
@@ -56,13 +68,18 @@ def convert_md_to_html(md_content, title, menu_items):
     # Get current year and month for update time
     current_time = datetime.now()
     update_time = current_time.strftime("%Y-%m")
+
     
-    return HTML_TEMPLATE.format(
-        title=title,
-        menu_items=menu_items,
-        content=html_content,
-        update_time=update_time
-    )
+    # Create a safe dictionary for formatting
+    format_dict = {
+        'my_title': title,
+        'my_menu_items': menu_items,
+        'my_content': html_content,
+        'my_update_time': update_time
+    }
+    
+    # Use safe formatting with explicit keys
+    return HTML_TEMPLATE.format_map(format_dict)
 
 def generate_menu_items(pages):
     """Generate menu items for all pages"""
@@ -79,12 +96,14 @@ def generate_menu_items(pages):
             menu_items.append(
                 f'<li><a href="{name}.html">{display_name}</a></li>'
             )
+
+    print(menu_items)
     return '\n'.join(menu_items)
 
 def process_md_files():
     """Process all markdown files in ./md directory"""
     md_dir = Path('./src/md')
-    output_dir = Path('./src/html')  # Changed back to html directory
+    output_dir = Path('./src/html')
     
     # Create output directory if it doesn't exist
     output_dir.mkdir(exist_ok=True)
@@ -99,20 +118,21 @@ def process_md_files():
     pages = [f.stem for f in md_files]
     menu_items = generate_menu_items(pages)
     
+    
     # Process each markdown file
     for md_file in md_files:
         try:
             with open(md_file, 'r', encoding='utf-8') as f:
                 md_content = f.read()
-            
             # Convert to HTML
             html_file = output_dir / f"{md_file.stem}.html"
+
+            
             html_content = convert_md_to_html(
                 md_content,
                 md_file.stem.capitalize(),
                 menu_items
             )
-            
             # Write HTML file
             with open(html_file, 'w', encoding='utf-8') as f:
                 f.write(html_content)
@@ -120,6 +140,9 @@ def process_md_files():
             print(f"Converted {md_file} to {html_file}")
             
         except Exception as e:
+            print(f"Exception occurred: {e}")
+            import traceback
+            traceback.print_exc()
             print(f"Error processing {md_file}: {str(e)}")
     
     # Copy styles.css to output directory

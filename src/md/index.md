@@ -7,4 +7,4 @@ Prior to my PhD journey in ISTA, I received a master degree in communication sys
 
 
 ## Contact
-You can reach me at: diyuan.wu@ista.ac.at
+Email: diyuan.wu@ista.ac.at

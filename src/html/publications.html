@@ -10,6 +10,7 @@
 </head>
 <body>
     <div id="layout-menu">
+        <button id="menu-toggle" aria-label="Toggle menu">☰</button>
         <ul>
             <li><a href="index.html">Home</a></li>
 <li><a href="publications.html">Publications</a></li>
@@ -33,5 +34,13 @@
             Last updated: 2025-01
         </div>
     </div>
+    <script>
+        // Toggle menu for mobile devices
+        const menuToggle = document.getElementById('menu-toggle');
+        const menu = document.getElementById('layout-menu');
+        menuToggle.addEventListener('click', () => {
+            menu.classList.toggle('active');
+        });
+    </script>
 </body>
 </html>
