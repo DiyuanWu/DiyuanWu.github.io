@@ -9,6 +9,7 @@ body {
     margin-right: auto;
     display: flex;
     flex-direction: column;
+    min-height: 100vh;
 }
 
 p {
@@ -16,13 +17,16 @@ p {
 }
 
 #layout-menu {
-    width: 50%;
+    width: 100%;
     padding: 1em;
     border-bottom: 1px solid #e0e0e0;
     background: #f8f8f8;
     font-size: 1.1em;
     line-height: 2em;
     order: 1;
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
 
 #layout-menu ul {
@@ -31,11 +35,12 @@ p {
     gap: 0.5em;
     margin: 0;
     padding: 0;
-    flex-direction: column;
+    flex-direction: row;
 }
 
 #layout-menu li {
     list-style: none;
+    white-space: nowrap;
 }
 
 #layout-menu a[href="index.html"]::before {
@@ -45,14 +50,15 @@ p {
 #layout-menu a[href="index.html"] {
     pointer-events: none;
     cursor: default;
-    order: -1; /* Ensure Home is always first */
+    order: -1;
 }
 
 #layout-content {
     order: 2;
-    max-width: 1000px;
+    width: 100%;
     padding: 1em;
     margin: 0;
+    box-sizing: border-box;
 }
 
 @media (min-width: 768px) {
@@ -66,6 +72,7 @@ p {
         border-right: 1px solid #e0e0e0;
         border-bottom: none;
         padding: 1em;
+        position: static;
     }
     
     #layout-menu ul {
@@ -78,6 +85,42 @@ p {
         padding-left: 1em;
         order: 2;
         flex: 1;
+    }
+}
+
+/* Mobile-specific adjustments */
+@media (max-width: 480px) {
+    body {
+        margin: 0.5em;
+    }
+    
+    h1 {
+        font-size: 2.5rem;
+    }
+    
+    h2 {
+        font-size: 2rem;
+    }
+    
+    h3 {
+        font-size: 1.6rem;
+    }
+    
+    #layout-menu {
+        padding: 0.5em;
+        font-size: 1em;
+    }
+    
+    #layout-menu ul {
+        gap: 0.3em;
+    }
+    
+    #layout-content {
+        padding: 0.5em;
+    }
+    
+    img {
+        max-width: 100% !important;
     }
 }
 
@@ -104,7 +147,8 @@ em {
 pre {
     padding: 0;
     margin: 0;
-    overflow: scroll;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
 }
 
 div#footer {
