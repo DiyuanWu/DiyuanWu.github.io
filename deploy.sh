@@ -1,5 +1,13 @@
 #!/bin/bash
 
+# Remove HTML files in root directory
+rm -f *.html
+
+# Remove HTML files in src/html directory
+rm -f ./src/html/*.html
+
+
+
 # Run the markdown to HTML conversion script
 python ./src/md2html.py
 

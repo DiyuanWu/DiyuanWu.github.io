@@ -1,4 +1,4 @@
-# Publications and Preprints
+# Publications
 
 Please also find my publications on my [Google scholar page](https://scholar.google.com/citations?user=MztcJLMAAAAJ&hl=zh-CN) or my [DBLP page](https://dblp.org/pid/284/7961.html)
 

@@ -3,6 +3,7 @@ import os
 from pathlib import Path
 import shutil
 import re
+from datetime import datetime
 
 # Global HTML template with MathJax support
 HTML_TEMPLATE = """<!DOCTYPE html>
@@ -23,6 +24,9 @@ HTML_TEMPLATE = """<!DOCTYPE html>
     </div>
     <div id="layout-content">
         {content}
+        <div id="footer">
+            Last updated: {update_time}
+        </div>
     </div>
 </body>
 </html>"""
@@ -48,21 +52,33 @@ def convert_md_to_html(md_content, title, menu_items):
         f'<br>{line[1:]}' if line.startswith('-') else line
         for line in html_content.split('\n')
     )
+    
+    # Get current year and month for update time
+    current_time = datetime.now()
+    update_time = current_time.strftime("%Y-%m")
+    
     return HTML_TEMPLATE.format(
         title=title,
         menu_items=menu_items,
-        content=html_content
+        content=html_content,
+        update_time=update_time
     )
 
 def generate_menu_items(pages):
     """Generate menu items for all pages"""
     menu_items = []
+    # First add the Home item if it exists
+    if "index" in pages:
+        menu_items.append('<li><a href="index.html">Home</a></li>')
+    
+    # Add other pages in order, excluding index
     for page in pages:
         name = os.path.splitext(page)[0]
-        display_name = "Home" if name == "index" else name.capitalize()
-        menu_items.append(
-            f'<li><a href="{name}.html">{display_name}</a></li>'
-        )
+        if name != "index":  # Skip index since we already added it
+            display_name = name.capitalize()
+            menu_items.append(
+                f'<li><a href="{name}.html">{display_name}</a></li>'
+            )
     return '\n'.join(menu_items)
 
 def process_md_files():

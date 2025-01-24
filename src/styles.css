@@ -3,7 +3,7 @@
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
-    margin: 2em;
+    margin: 1em;
     max-width: 1200px;
     margin-left: auto;
     margin-right: auto;
@@ -12,11 +12,11 @@ body {
 }
 
 p {
-    text-align: justify;
+    text-align: left;
 }
 
 #layout-menu {
-    width: 100%;
+    width: 50%;
     padding: 1em;
     border-bottom: 1px solid #e0e0e0;
     background: #f8f8f8;
@@ -28,9 +28,10 @@ p {
 #layout-menu ul {
     display: flex;
     flex-wrap: wrap;
-    gap: 1em;
+    gap: 0.5em;
     margin: 0;
     padding: 0;
+    flex-direction: column;
 }
 
 #layout-menu li {
@@ -44,35 +45,39 @@ p {
 #layout-menu a[href="index.html"] {
     pointer-events: none;
     cursor: default;
+    order: -1; /* Ensure Home is always first */
 }
 
 #layout-content {
     order: 2;
     max-width: 1000px;
-    padding: 2em;
-    margin: 0 auto;
+    padding: 1em;
+    margin: 0;
 }
 
 @media (min-width: 768px) {
     body {
         flex-direction: row;
+        gap: 1em;
     }
     
     #layout-menu {
-        width: 200px;
+        width: 180px;
         border-right: 1px solid #e0e0e0;
         border-bottom: none;
-        padding: 2em 1em;
-        order: 1;
+        padding: 1em;
     }
     
     #layout-menu ul {
         flex-direction: column;
+        gap: 0.5em;
     }
     
     #layout-content {
-        margin-left: 220px;
+        margin-left: 0;
+        padding-left: 1em;
         order: 2;
+        flex: 1;
     }
 }
 
