@@ -29,11 +29,22 @@
         </div>
     </div>
     <script>
-        // Toggle menu for mobile devices
-        const menuToggle = document.getElementById('menu-toggle');
-        const menu = document.getElementById('layout-menu');
-        menuToggle.addEventListener('click', () => {
-            menu.classList.toggle('active');
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuToggle = document.getElementById('menu-toggle');
+            const menu = document.getElementById('layout-menu');
+            
+            if (menuToggle && menu) {
+                menuToggle.addEventListener('click', function() {
+                    menu.classList.toggle('active');
+                });
+                
+                // Close menu when clicking outside
+                document.addEventListener('click', function(event) {
+                    if (!menu.contains(event.target) && !menuToggle.contains(event.target)) {
+                        menu.classList.remove('active');
+                    }
+                });
+            }
         });
     </script>
 </body>

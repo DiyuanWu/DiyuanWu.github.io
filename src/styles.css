@@ -71,33 +71,26 @@ p {
     margin: 0 auto;
 }
 
-@media (min-width: 768px) {
-    body {
-        flex-direction: row;
-        gap: 2vw;
-    }
-    
-    #layout-menu {
-        width: var(--menu-width);
-        max-width: 200px;
-        border-right: 1px solid #e0e0e0;
-        border-bottom: none;
-        padding: 1vw;
-        position: sticky;
-        top: 0;
-        height: 100vh;
+/* Mobile styles */
+@media (max-width: 767px) {
+    #menu-toggle {
+        display: block; /* Show toggle button on mobile */
     }
     
     #layout-menu ul {
+        display: none; /* Hide menu by default on mobile */
         flex-direction: column;
-        gap: 0.5vw;
+        width: 100%;
+        background: #f8f8f8;
+        padding: 0.5rem 0;
     }
     
-    #layout-content {
-        margin-left: var(--menu-width);
-        padding-left: 2vw;
-        order: 2;
-        flex: 1;
+    #layout-menu.active ul {
+        display: flex; /* Show menu when active */
+    }
+    
+    #layout-menu li {
+        padding: 0.5rem 1rem;
     }
 }
 
@@ -179,7 +172,8 @@ img {
 }
 
 @media print {
-    #layout-menu {
+    #layout-menu {<li><a href="index.html">Home</a></li>
+        <li><a href="publications.html">Publications</a></li>
         display: none;
     }
     a {
