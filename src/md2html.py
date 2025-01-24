@@ -34,17 +34,19 @@ HTML_TEMPLATE = """<!DOCTYPE html>
             const menuToggle = document.getElementById('menu-toggle');
             const menu = document.getElementById('layout-menu');
             const menuList = menu.querySelector('ul');
+            let clickCount = 0;
             
             if (menuToggle && menu && menuList) {{
                 menuToggle.addEventListener('click', function(event) {{
                     event.stopPropagation(); // Prevent event from bubbling up
-                    menuList.style.display = menuList.style.display === 'block' ? 'none' : 'block';
-                    menuList.style.flexDirection = 'column';
-                }});
-                
-                // Close menu when clicking outside
-                document.addEventListener('click', function(event) {{
-                    if (!menu.contains(event.target) && !menuToggle.contains(event.target)) {{
+                    clickCount++;
+                    
+                    if (clickCount % 2 === 0) {{
+                        // Odd click - show menu
+                        menuList.style.display = 'block';
+                        menuList.style.flexDirection = 'column';
+                    }} else {{
+                        // Even click - hide menu
                         menuList.style.display = 'none';
                     }}
                 }});
@@ -159,14 +161,15 @@ def process_md_files():
             traceback.print_exc()
             print(f"Error processing {md_file}: {str(e)}")
     
-    # Copy styles.css to output directory
-    css_file = output_dir / 'styles.css'
-    if not css_file.exists():
-        try:
-            shutil.copy('styles.css', css_file)
-            print("Copied styles.css to output directory")
-        except Exception as e:
-            print(f"Error copying styles.css: {str(e)}")
+    # Copy styles.css from src to output directory
+    #css_source = Path('./src/styles.css')
+    #css_dest = output_dir / 'styles.css'
+    #if not css_dest.exists():
+    #    try:
+    #        shutil.copy(css_source, css_dest)
+    #        print(f"Copied {css_source} to {css_dest}")
+    #    except Exception as e:
+    #        print(f"Error copying styles.css: {str(e)}")
 
 if __name__ == "__main__":
     process_md_files()

@@ -39,17 +39,19 @@
             const menuToggle = document.getElementById('menu-toggle');
             const menu = document.getElementById('layout-menu');
             const menuList = menu.querySelector('ul');
+            let clickCount = 0;
             
             if (menuToggle && menu && menuList) {
                 menuToggle.addEventListener('click', function(event) {
                     event.stopPropagation(); // Prevent event from bubbling up
-                    menuList.style.display = menuList.style.display === 'block' ? 'none' : 'block';
-                    menuList.style.flexDirection = 'column';
-                });
-                
-                // Close menu when clicking outside
-                document.addEventListener('click', function(event) {
-                    if (!menu.contains(event.target) && !menuToggle.contains(event.target)) {
+                    clickCount++;
+                    
+                    if (clickCount % 2 === 0) {
+                        // Odd click - show menu
+                        menuList.style.display = 'block';
+                        menuList.style.flexDirection = 'column';
+                    } else {
+                        // Even click - hide menu
                         menuList.style.display = 'none';
                     }
                 });
