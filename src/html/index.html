@@ -9,48 +9,27 @@
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
-    <div id="layout-menu">
+    <div id="layout-wrapper">
         <button id="menu-toggle" aria-label="Toggle menu">☰</button>
-        <ul>
-            <li><a href="index.html">Home</a></li>
+        <div id="layout-menu">
+            <ul>
+                <li><a href="index.html">Home</a></li>
 <li><a href="publications.html">Publications</a></li>
-        </ul>
-    </div>
-    <div id="layout-content">
-        <h1>Diyuan Wu</h1>
+            </ul>
+        </div>
+        <div id="layout-content">
+            <h1>Diyuan Wu</h1>
 <p><img alt="Profile Picture" src="./src/image/me.jpeg" /></p>
 <h2>About Me</h2>
 <p>My name is Diyuan Wu (吴迪远  in Chinese), I'm currently a PhD student in <a href="https://ist.ac.at/en/home/">Institute of Science and Technology Austria (ISTA)</a> starting from fall, 2022 . I'm very fortunate to work with Professor <a href="http://marcomondelli.com/">Marco Mondelli </a>. I'm research interest is theory of (deep) machine learning.</p>
 <p>Prior to my PhD journey in ISTA, I received a master degree in communication system from <a href="https://www.epfl.ch/en/">EPFL</a> in 2022, and bachelor degree in information and communication engineering from <a href="https://en.uestc.edu.cn/">UESTC(电子科大)</a>, Chengdu, China in 2019. I also did a scientific internship in ISTA to finish my master's thesis from 2021-2022, also with Professor Marco Mondelli. </p>
 <h2>Contact</h2>
 <p>Email: diyuan.wu@ista.ac.at</p>
-        <div id="footer">
-            Last updated: 2025-01
+            <div id="footer">
+                Last updated: 2025-01
+            </div>
         </div>
     </div>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const menuToggle = document.getElementById('menu-toggle');
-            const menu = document.getElementById('layout-menu');
-            const menuList = menu.querySelector('ul');
-            let clickCount = 0;
-            
-            if (menuToggle && menu && menuList) {
-                menuToggle.addEventListener('click', function(event) {
-                    event.stopPropagation(); // Prevent event from bubbling up
-                    clickCount++;
-                    
-                    if (clickCount % 2 === 0) {
-                        // Odd click - show menu
-                        menuList.style.display = 'block';
-                        menuList.style.flexDirection = 'column';
-                    } else {
-                        // Even click - hide menu
-                        menuList.style.display = 'none';
-                    }
-                });
-            }
-        });
-    </script>
+    <script src="D:\DiyuanWu.github.io\src\js/menu-toggle.js"></script>
 </body>
 </html>

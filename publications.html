@@ -9,15 +9,16 @@
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
-    <div id="layout-menu">
+    <div id="layout-wrapper">
         <button id="menu-toggle" aria-label="Toggle menu">☰</button>
-        <ul>
-            <li><a href="index.html">Home</a></li>
+        <div id="layout-menu">
+            <ul>
+                <li><a href="index.html">Home</a></li>
 <li><a href="publications.html">Publications</a></li>
-        </ul>
-    </div>
-    <div id="layout-content">
-        <h1>Publications</h1>
+            </ul>
+        </div>
+        <div id="layout-content">
+            <h1>Publications</h1>
 <p>Please also find my publications on my <a href="https://scholar.google.com/citations?user=MztcJLMAAAAJ&amp;hl=zh-CN">Google scholar page</a> or my <a href="https://dblp.org/pid/284/7961.html">DBLP page</a></p>
 <ul>
 <li>
@@ -30,33 +31,11 @@
 <p><em>On conditional Sibson's \(\alpha\)-Mutual Information.</em>  Amedeo Roberto Esposito, Diyuan Wu, Michael Gastpar.  <strong>ISIT 2021</strong> <a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=9517944">link</a></p>
 </li>
 </ul>
-        <div id="footer">
-            Last updated: 2025-01
+            <div id="footer">
+                Last updated: 2025-01
+            </div>
         </div>
     </div>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const menuToggle = document.getElementById('menu-toggle');
-            const menu = document.getElementById('layout-menu');
-            const menuList = menu.querySelector('ul');
-            let clickCount = 0;
-            
-            if (menuToggle && menu && menuList) {
-                menuToggle.addEventListener('click', function(event) {
-                    event.stopPropagation(); // Prevent event from bubbling up
-                    clickCount++;
-                    
-                    if (clickCount % 2 === 0) {
-                        // Odd click - show menu
-                        menuList.style.display = 'block';
-                        menuList.style.flexDirection = 'column';
-                    } else {
-                        // Even click - hide menu
-                        menuList.style.display = 'none';
-                    }
-                });
-            }
-        });
-    </script>
+    <script src="D:\DiyuanWu.github.io\src\js/menu-toggle.js"></script>
 </body>
 </html>

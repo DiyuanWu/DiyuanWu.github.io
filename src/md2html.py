@@ -6,6 +6,7 @@ import re
 from datetime import datetime
 
 # Global HTML template with MathJax support and responsive design
+JS_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'js')
 HTML_TEMPLATE = """<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,42 +18,21 @@ HTML_TEMPLATE = """<!DOCTYPE html>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
-    <div id="layout-menu">
+    <div id="layout-wrapper">
         <button id="menu-toggle" aria-label="Toggle menu">☰</button>
-        <ul>
-            {my_menu_items}
-        </ul>
-    </div>
-    <div id="layout-content">
-        {my_content}
-        <div id="footer">
-            Last updated: {my_update_time}
+        <div id="layout-menu">
+            <ul>
+                {my_menu_items}
+            </ul>
+        </div>
+        <div id="layout-content">
+            {my_content}
+            <div id="footer">
+                Last updated: {my_update_time}
+            </div>
         </div>
     </div>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {{
-            const menuToggle = document.getElementById('menu-toggle');
-            const menu = document.getElementById('layout-menu');
-            const menuList = menu.querySelector('ul');
-            let clickCount = 0;
-            
-            if (menuToggle && menu && menuList) {{
-                menuToggle.addEventListener('click', function(event) {{
-                    event.stopPropagation(); // Prevent event from bubbling up
-                    clickCount++;
-                    
-                    if (clickCount % 2 === 0) {{
-                        // Odd click - show menu
-                        menuList.style.display = 'block';
-                        menuList.style.flexDirection = 'column';
-                    }} else {{
-                        // Even click - hide menu
-                        menuList.style.display = 'none';
-                    }}
-                }});
-            }}
-        }});
-    </script>
+    <script src="{js_path}/menu-toggle.js"></script>
 </body>
 </html>"""
 
@@ -72,9 +52,6 @@ def convert_md_to_html(md_content, title, menu_items):
     # Convert markdown to HTML with math extensions
     html_content = markdown.markdown(md_content, extensions=['fenced_code', 'tables'])
     
-    # Escape curly braces in both content and menu items
-    
-    
     # Replace single '-' with <br> for line breaks
     html_content = '\n'.join(
         f'<br>{line[1:]}' if line.startswith('-') else line
@@ -85,13 +62,13 @@ def convert_md_to_html(md_content, title, menu_items):
     current_time = datetime.now()
     update_time = current_time.strftime("%Y-%m")
 
-    
     # Create a safe dictionary for formatting
     format_dict = {
         'my_title': title,
         'my_menu_items': menu_items,
         'my_content': html_content,
-        'my_update_time': update_time
+        'my_update_time': update_time,
+        'js_path': JS_PATH
     }
     
     # Use safe formatting with explicit keys
@@ -108,12 +85,11 @@ def generate_menu_items(pages):
     for page in pages:
         name = os.path.splitext(page)[0]
         if name != "index":  # Skip index since we already added it
-            display_name = name.capitalize()
+            display_name = name.replace('_', ' ').capitalize()
             menu_items.append(
                 f'<li><a href="{name}.html">{display_name}</a></li>'
             )
 
-    print(menu_items)
     return '\n'.join(menu_items)
 
 def process_md_files():
@@ -134,21 +110,20 @@ def process_md_files():
     pages = [f.stem for f in md_files]
     menu_items = generate_menu_items(pages)
     
-    
     # Process each markdown file
     for md_file in md_files:
         try:
             with open(md_file, 'r', encoding='utf-8') as f:
                 md_content = f.read()
+            
             # Convert to HTML
             html_file = output_dir / f"{md_file.stem}.html"
-
-            
             html_content = convert_md_to_html(
                 md_content,
-                md_file.stem.capitalize(),
+                md_file.stem.replace('_', ' ').capitalize(),
                 menu_items
             )
+            
             # Write HTML file
             with open(html_file, 'w', encoding='utf-8') as f:
                 f.write(html_content)
@@ -156,20 +131,9 @@ def process_md_files():
             print(f"Converted {md_file} to {html_file}")
             
         except Exception as e:
-            print(f"Exception occurred: {e}")
+            print(f"Error processing {md_file}: {str(e)}")
             import traceback
             traceback.print_exc()
-            print(f"Error processing {md_file}: {str(e)}")
-    
-    # Copy styles.css from src to output directory
-    #css_source = Path('./src/styles.css')
-    #css_dest = output_dir / 'styles.css'
-    #if not css_dest.exists():
-    #    try:
-    #        shutil.copy(css_source, css_dest)
-    #        print(f"Copied {css_source} to {css_dest}")
-    #    except Exception as e:
-    #        print(f"Error copying styles.css: {str(e)}")
 
 if __name__ == "__main__":
     process_md_files()

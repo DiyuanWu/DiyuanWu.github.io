@@ -6,6 +6,12 @@
     --max-content-width: 90vw;
     --menu-width: min(20vw, 300px); /* Adaptive width with maximum limit */
     --spacing-unit: 1rem;
+    --min-page-height: 100vh; /* Ensure consistent minimum page height */
+}
+
+html, body {
+    height: 100%;
+    min-height: var(--min-page-height);
 }
 
 body {
@@ -14,8 +20,15 @@ body {
     margin: 0;
     padding: 0;
     display: flex;
-    min-height: 100vh;
+    min-height: var(--min-page-height);
     font-size: calc(var(--base-font-size) * 1.1);
+}
+
+#layout-wrapper {
+    display: flex;
+    flex: 1;
+    min-height: var(--min-page-height);
+    width: 100%;
 }
 
 p {
@@ -28,12 +41,12 @@ p {
     width: var(--menu-width);
     padding: 1vw;
     background: #f8f8f8;
-    font-size: calc(var(--base-font-size) * 1.3);
+    font-size: clamp(1rem, 2.5vw, calc(var(--base-font-size) * 1.3));
     line-height: 1.5;
     position: fixed;
-    top: 5rem; /* Adjusted to be below the toggle button */
+    top: 5rem;
     left: 1rem;
-    height: calc(100vh - 6rem); /* Adjusted height to account for toggle button */
+    height: calc(var(--min-page-height) - 6rem);
     z-index: 100;
     border: 1px solid #e0e0e0;
     border-radius: 4px;
@@ -42,11 +55,11 @@ p {
 }
 
 #menu-toggle {
-    display: flex;
+    display: block;
     background: rgba(255, 255, 255, 0.9);
     border: 1px solid #e0e0e0;
     border-radius: 4px;
-    font-size: 2rem;
+    font-size: clamp(1.5rem, 4vw, 2rem);
     cursor: pointer;
     padding: 0.5rem 1rem;
     position: fixed;
@@ -56,6 +69,10 @@ p {
     color: #022b6d;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     transition: all 0.2s ease;
+}
+
+.hidden {
+    display: none;
 }
 
 #menu-toggle:hover {
@@ -76,21 +93,39 @@ p {
     flex: 1;
     padding: 2vw;
     max-width: var(--max-content-width);
-    margin-left: calc(var(--menu-width) + 2rem); /* Added margin to account for menu */
+    margin-left: calc(var(--menu-width) + 2rem);
+    min-height: var(--min-page-height);
+    width: 100%; /* Add this to ensure consistent width */
+    box-sizing: border-box; /* Include padding in width calculation */
 }
+
 
 /* Mobile styles */
 @media (max-width: 767px) {
+    #layout-menu {
+        display: none;
+        font-size: clamp(1rem, 4vw, 1.5rem);
+    }
+    
+    #layout-menu.hidden {
+        display: none;
+    }
+    
+    #layout-menu:not(.hidden) {
+        display: block;
+    }
+
     body {
         flex-direction: column;
+        font-size: clamp(1rem, 4vw, 1.2rem);
     }
     
     #menu-toggle {
-        display: block !important; /* Force display */
+        display: block;
         background: rgba(255, 255, 255, 0.9);
         border: 1px solid #e0e0e0;
         border-radius: 4px;
-        font-size: 2rem;
+        font-size: clamp(1.5rem, 6vw, 2rem);
         cursor: pointer;
         padding: 0.5rem 1rem;
         position: fixed;
@@ -100,18 +135,11 @@ p {
         color: #022b6d;
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         transition: all 0.2s ease;
-        visibility: visible !important; /* Ensure visibility */
-        opacity: 1 !important; /* Ensure full opacity */
     }
     
     #menu-toggle:hover {
         background: white;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-    }
-    
-    #layout-menu {
-        display: none; /* Hide the menu completely */
-        visibility: hidden; /* Double ensure menu is hidden */
     }
     
     #layout-content {
@@ -120,17 +148,19 @@ p {
         margin-left: 0;
         margin-top: 4rem;
         margin-right: 1rem;
+        min-height: calc(var(--min-page-height) - 4rem);
+        max-width: 100%; /* Ensure full width on mobile */
     }
     
-    /* Debug styles */
     #menu-toggle::after {
         content: "Menu";
-        font-size: 1rem;
+        font-size: clamp(0.8rem, 3vw, 1rem);
         margin-left: 0.5rem;
         vertical-align: middle;
     }
 }
 
+/* Rest of the CSS remains the same */
 a {
     color: #022b6d;
     text-decoration: none;
@@ -166,8 +196,16 @@ div#footer {
     color: #c0c0c0;
 }
 
-div#footer a {
-    color: #80a0b0;
+div#footer {
+    font-size: calc(var(--base-font-size) * 0.8);
+    border-top: 1px solid #c0c0c0;
+    padding-top: 0.5vw;
+    margin-top: 4vw;
+    color: #c0c0c0;
+    width: 100%; /* Ensure footer spans full width */
+    box-sizing: border-box; /* Include padding in width calculation */
+    position: relative; /* Keep footer at bottom of content */
+    bottom: 0;
 }
 
 div.codeblock, div.infoblock {
@@ -196,12 +234,12 @@ div.codeblock > div.blockcontent {
     background: #f6f6f6;
 }
 
-h1 { font-size: calc(var(--base-font-size) * var(--scale-factor) * 3); }
-h2 { font-size: calc(var(--base-font-size) * var(--scale-factor) * 2.5); }
-h3 { font-size: calc(var(--base-font-size) * var(--scale-factor) * 2); }
-h4 { font-size: calc(var(--base-font-size) * var(--scale-factor) * 1.6); }
-h5 { font-size: calc(var(--base-font-size) * var(--scale-factor) * 1.3); }
-h6 { font-size: calc(var(--base-font-size) * var(--scale-factor) * 1); }
+h1 { font-size: clamp(1.5rem, 8vw, calc(var(--base-font-size) * var(--scale-factor) * 3)); }
+h2 { font-size: clamp(1.3rem, 7vw, calc(var(--base-font-size) * var(--scale-factor) * 2.5)); }
+h3 { font-size: clamp(1.2rem, 6vw, calc(var(--base-font-size) * var(--scale-factor) * 2)); }
+h4 { font-size: clamp(1.1rem, 5vw, calc(var(--base-font-size) * var(--scale-factor) * 1.6)); }
+h5 { font-size: clamp(1rem, 4vw, calc(var(--base-font-size) * var(--scale-factor) * 1.3)); }
+h6 { font-size: clamp(0.9rem, 3vw, calc(var(--base-font-size) * var(--scale-factor) * 1)); }
 
 img {
     max-width: 20%;
