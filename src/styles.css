@@ -71,10 +71,10 @@ p {
     #layout-menu {
         display: none; /* Hide entire menu block by default on mobile */
         position: fixed;
-        top: 0;
+        top: 4rem; /* Changed from 0 to 4rem to position below menu button */
         left: 0;
         width: 100%;
-        height: 100%;
+        height: calc(100vh - 4rem); /* Adjust height to account for menu button */
         background: #f8f8f8;
         z-index: 999;
         padding: 1rem;
@@ -89,7 +89,7 @@ p {
         font-size: clamp(1.5rem, 6vw, 2rem);
         cursor: pointer;
         padding: 0.5rem 1rem;
-        position: fixed; /* Changed back to fixed */
+        position: fixed;
         top: 1rem;
         left: 1rem;
         z-index: 1000;
@@ -106,7 +106,7 @@ p {
         display: flex;
         flex-direction: column;
         width: 100%;
-        margin-top: 3rem;
+        margin-top: 0; /* Changed from 3rem to 0 since menu is already positioned below button */
     }
     
     #layout-menu li {
@@ -121,7 +121,7 @@ p {
     /* Make main content full width on mobile */
     #layout-content {
         width: 100%;
-        padding: 0;
+        padding: 6rem;
         margin: 0;
     }
     

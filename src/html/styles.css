@@ -108,9 +108,28 @@ p {
 /* Mobile styles */
 @media (max-width: 767px) {
     #layout-menu {
-        display: none;
+        display: none; /* Hidden by default */
         width: 80vw;
-        font-size: calc(var(--base-font-size) * 1.1);
+        height: 100vh;
+        top: 4rem; /* Position below menu button */
+        left: 0;
+        z-index: 999;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+    }
+
+    #layout-menu.active {
+        display: block;
+        transform: translateX(0);
+    }
+
+    body.menu-open {
+        overflow: hidden;
+    }
+
+    #menu-toggle {
+        display: block;
+        z-index: 1000;
     }
     
     #layout-menu.hidden {
@@ -138,13 +157,6 @@ p {
         margin-right: 1rem;
         min-height: calc(var(--min-page-height) - 4rem);
         max-width: 100%;
-    }
-    
-    #menu-toggle::after {
-        content: "Menu";
-        font-size: clamp(0.8rem, 3vw, 1rem);
-        margin-left: 0.5rem;
-        vertical-align: middle;
     }
 }
 

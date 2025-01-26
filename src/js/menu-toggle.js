@@ -1,24 +1,18 @@
 // Get references to the menu and toggle button
 const menu = document.getElementById('layout-menu');
 const toggleButton = document.getElementById('menu-toggle');
+const body = document.body;
 
 // Function to check mobile view and set initial state
 function initializeMenuState() {
     const isMobile = window.matchMedia('(max-width: 767px)').matches;
     
-    // Set initial state based on viewport
     if (isMobile) {
-        menu.classList.add('hidden'); // Hide menu by default on mobile
-        menu.style.position = 'fixed';
-        menu.style.top = '5rem';
-        menu.style.left = '1rem';
-        menu.style.zIndex = '1000';
+        menu.classList.remove('active');
+        body.classList.remove('menu-open');
     } else {
-        menu.classList.remove('hidden'); // Show menu by default on desktop
-        menu.style.position = ''; // Reset position for desktop
-        menu.style.top = '';
-        menu.style.left = '';
-        menu.style.zIndex = '';
+        menu.classList.add('active');
+        body.classList.remove('menu-open');
     }
 }
 
@@ -27,14 +21,11 @@ initializeMenuState();
 
 // Add click event listener to toggle button
 toggleButton.addEventListener('click', () => {
-    menu.classList.toggle('hidden');
+    const isMobile = window.matchMedia('(max-width: 767px)').matches;
     
-    // For mobile view, ensure proper positioning when toggling
-    if (window.matchMedia('(max-width: 767px)').matches) {
-        menu.style.position = 'fixed';
-        menu.style.top = '5rem';
-        menu.style.left = '1rem';
-        menu.style.zIndex = '1000';
+    if (isMobile) {
+        menu.classList.toggle('active');
+        body.classList.toggle('menu-open');
     }
 });
 
