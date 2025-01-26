@@ -19,7 +19,7 @@ HTML_TEMPLATE = """<!DOCTYPE html>
 </head>
 <body>
     <div id="layout-wrapper">
-        <button id="menu-toggle" aria-label="Toggle menu">☰ Menu</button>
+        <button id="menu-toggle" aria-label="Toggle menu">☰</button>
         <div id="layout-menu">
             <ul>
                 {my_menu_items}
