@@ -106,7 +106,7 @@ p {
 }
 
 /* Mobile styles */
-@media (max-width: 767px) {
+@media (max-width: 1000px) {
     #layout-menu {
         display: none; /* Hidden by default */
         width: 80vw;

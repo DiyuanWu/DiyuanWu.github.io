@@ -5,7 +5,7 @@ const body = document.body;
 
 // Function to check mobile view and set initial state
 function initializeMenuState() {
-    const isMobile = window.matchMedia('(max-width: 767px)').matches;
+    const isMobile = window.matchMedia('(max-width: 1000px)').matches;
     
     if (isMobile) {
         menu.classList.remove('active');
@@ -21,7 +21,7 @@ initializeMenuState();
 
 // Add click event listener to toggle button
 toggleButton.addEventListener('click', () => {
-    const isMobile = window.matchMedia('(max-width: 767px)').matches;
+    const isMobile = window.matchMedia('(max-width: 1000px)').matches;
     
     if (isMobile) {
         menu.classList.toggle('active');

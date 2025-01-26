@@ -32,7 +32,7 @@ HTML_TEMPLATE = """<!DOCTYPE html>
             </div>
         </div>
     </div>
-    <script src="{js_path}/menu-toggle.js"></script>
+    <script src="./src/js/menu-toggle.js"></script>
 </body>
 </html>"""
 
@@ -67,8 +67,7 @@ def convert_md_to_html(md_content, title, menu_items):
         'my_title': title,
         'my_menu_items': menu_items,
         'my_content': html_content,
-        'my_update_time': update_time,
-        'js_path': JS_PATH
+        'my_update_time': update_time
     }
     
     # Use safe formatting with explicit keys
