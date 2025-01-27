@@ -4,10 +4,10 @@ Please also find my publications on my [Google scholar page](https://scholar.goo
 
 
 
-- "The Iterative Optimal Brain Surgeon: Faster Sparse Recovery by Leveraging Second-Order Information."  **Diyuan Wu**, Ionut-Vlad Modoranu, Mher Safaryan, Denis Kuznedelev, Dan Alistarh.   **NeurIPS2024** [link](https://arxiv.org/abs/2408.17163)
+- "The Iterative Optimal Brain Surgeon: Faster Sparse Recovery by Leveraging Second-Order Information."  **Diyuan Wu**, Ionut-Vlad Modoranu, Mher Safaryan, Denis Kuznedelev, Dan Alistarh.   **NeurIPS 2024** [link](https://arxiv.org/abs/2408.17163)
 
 
-- "Mean-field analysis for heavy ball methods: Dropout-stability, connectivity, and global convergence."  **Diyuan Wu**, Vyacheslav Kungurtsev, Marco Mondelli.  **TMLR2023** [link](https://openreview.net/forum?id=gZna3IiGfl)
+- "Mean-field analysis for heavy ball methods: Dropout-stability, connectivity, and global convergence."  **Diyuan Wu**, Vyacheslav Kungurtsev, Marco Mondelli.  **TMLR 2023** [link](https://openreview.net/forum?id=gZna3IiGfl)
 
 
 
