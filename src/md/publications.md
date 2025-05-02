@@ -2,7 +2,7 @@
 
 Please also find my publications on my [Google scholar page](https://scholar.google.com/citations?user=MztcJLMAAAAJ&hl=zh-CN) or my [DBLP page](https://dblp.org/pid/284/7961.html)
 
-- "Neural Collapse Beyond the Unconstrained Features Model: Landscape, Dynamics, and Generalization in the Mean-Field Regime." **Diyuan Wu**, Marco Mondelli. **Preprint 2025** [arxiv](https://arxiv.org/abs/2501.19104)
+- "Neural Collapse Beyond the Unconstrained Features Model: Landscape, Dynamics, and Generalization in the Mean-Field Regime." **Diyuan Wu**, Marco Mondelli. **ICML 2025** (*spotlight*) [arxiv](https://arxiv.org/abs/2501.19104)
 
 
 - "The Iterative Optimal Brain Surgeon: Faster Sparse Recovery by Leveraging Second-Order Information."  **Diyuan Wu**, Ionut-Vlad Modoranu, Mher Safaryan, Denis Kuznedelev, Dan Alistarh.   **NeurIPS 2024** [arxiv](https://arxiv.org/abs/2408.17163)

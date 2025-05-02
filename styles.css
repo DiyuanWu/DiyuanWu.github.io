@@ -1,13 +1,8 @@
 /* Default css file for markdown to html conversion with fluid layout */
 
 @font-face {
-    font-family: 'Dancing Script';
-    src: url('./src/font/DancingScript-VariableFont_wght.ttf') format('truetype');
-}
-
-@font-face {
-    font-family: 'Roboto Condensed';
-    src: url('./src/font/RobotoCondensed-VariableFont_wght.ttf') format('truetype');
+    font-family: 'titles';
+    src: url('./src/font/IBMPlexSerif-BoldItalic.ttf') format('truetype');
 }
 
 :root {
@@ -20,6 +15,8 @@
     --link-color: #1a28e8; /* New link color - Google blue */
     --link-hover-color: #8415b0; /* Darker blue for hover state */
     --text-color: #333; /* Added text color variable */
+    --footer-color: #999;
+    --footer-font-size: 0.8rem;
 }
 
 html, body {
@@ -28,14 +25,16 @@ html, body {
 }
 
 body {
-    font-family: 'Roboto Condensed', sans-serif;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     line-height: 1.8;
     margin: 0;
     padding: 0;
     display: flex;
+    flex-direction: column;
     min-height: var(--min-page-height);
     font-size: calc(var(--base-font-size) * 1.1);
     color: var(--text-color);
+    position: relative;
 }
 
 #layout-wrapper {
@@ -55,7 +54,7 @@ p {
     width: var(--menu-width);
     padding: clamp(0.5rem, 1vw, 1rem);
     background: #f8f8f8;
-    font-family: 'Roboto Condensed', sans-serif;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-size: calc(var(--base-font-size) * 1.1);
     line-height: 1.8;
     position: fixed;
@@ -69,8 +68,6 @@ p {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     color: var(--text-color);
 }
-
-
 
 .menu-icon {
     width: 90%;
@@ -97,13 +94,14 @@ p {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     transition: all 0.2s ease;
     font-size: calc(var(--base-font-size) * 0.9);
-    font-family: 'Roboto Condensed', sans-serif;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 #menu-toggle:hover {
     background: white;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
+
 #layout-menu ul {
     display: flex;
     flex-direction: column;
@@ -121,15 +119,16 @@ p {
     min-height: var(--min-page-height);
     width: 100%;
     box-sizing: border-box;
+    padding-bottom: 2rem; /* Space for footer */
 }
 
 /* Mobile styles */
 @media (max-width: 1000px) {
     #layout-menu {
-        display: none; /* Hidden by default */
+        display: none;
         width: 80vw;
         height: 100vh;
-        top: 4rem; /* Position below menu button */
+        top: 4rem;
         left: 0;
         z-index: 999;
         transform: translateX(-100%);
@@ -147,38 +146,9 @@ p {
 
     #menu-toggle {
         display: block;
-        z-index: 1000;
-    }
-    
-    #layout-menu.hidden {
-        display: none;
-    }
-    
-    #layout-menu:not(.hidden) {
-        display: block;
-    }
-
-    body {
-        flex-direction: column;
-        font-size: clamp(1rem, 4vw, 1.2rem);
-    }
-    
-    #menu-toggle {
-        font-size: clamp(1.5rem, 6vw, 2rem);
-    }
-    
-    #layout-content {
-        width: 98%;
-        padding: 1rem;
-        margin-left: 0;
-        margin-top: 4rem;
-        margin-right: 1rem;
-        min-height: calc(var(--min-page-height) - 4rem);
-        max-width: 100%;
     }
 }
 
-/* Rest of the CSS remains the same */
 a {
     color: var(--link-color);
     text-decoration: none;
@@ -193,100 +163,44 @@ a:hover {
     border-bottom: 1px solid var(--link-hover-color);
 }
 
-strong {
-    font-weight: bold;
-}
-
-em {
-    font-style: italic;
-}
-
-pre {
-    padding: 0;
-    margin: 0;
-    overflow: auto;
-    -webkit-overflow-scrolling: touch;
-}
-
-div#footer {
-    font-size: calc(var(--base-font-size) * 0.8);
-    border-top: 1px solid #c0c0c0;
-    padding-top: 0.5vw;
-    margin-top: 4vw;
-    color: #c0c0c0;
-}
-
-div#footer {
-    font-size: calc(var(--base-font-size) * 0.8);
-    border-top: 1px solid #c0c0c0;
-    padding-top: 0.5vw;
-    margin-top: 4vw;
-    color: #c0c0c0;
-    width: 100%;
-    box-sizing: border-box;
-    position: relative;
-    bottom: 0;
-}
-
-div.codeblock, div.infoblock {
-    margin-right: 0%;
-    margin-top: 1.2em;
-    margin-bottom: 1.3em;
-}
-
-div.blocktitle {
-    font-weight: bold;
-    color: #cd7b62;
-    margin-top: 1.2em;
-    margin-bottom: 0.1em;
-}
-
-div.blockcontent {
-    border: 1px solid silver;
-    padding: 0.3em 0.5em;
-}
-
-div.infoblock > div.blockcontent {
-    background: #ffffee;
-}
-
-div.codeblock > div.blockcontent {
-    background: #f6f6f6;
-}
-
 h1 { 
     font-size: clamp(2rem, 10vw, calc(var(--base-font-size) * var(--scale-factor) * 3.5));
-    font-family: 'Dancing Script', cursive;
+    font-family: 'titles', cursive;
     font-weight: 900;
     letter-spacing: -0.03em;
+    margin: 0.5em 0;
 }
 h2 { 
     font-size: clamp(1.8rem, 9vw, calc(var(--base-font-size) * var(--scale-factor) * 3));
-    font-family: 'Dancing Script', cursive;
+    font-family: 'titles', cursive;
     font-weight: 700;
     letter-spacing: -0.02em;
+    margin: 0.4em 0;
 }
 h3 { 
     font-size: clamp(1.6rem, 8vw, calc(var(--base-font-size) * var(--scale-factor) * 2.5));
-    font-family: 'Dancing Script', cursive;
+    font-family: 'titles', cursive;
     font-weight: 600;
     letter-spacing: -0.01em;
+    margin: 0.3em 0;
 }
 h4 { 
     font-size: clamp(1.4rem, 7vw, calc(var(--base-font-size) * var(--scale-factor) * 2));
-    font-family: 'Dancing Script', cursive;
+    font-family: 'titles', cursive;
     font-weight: 500;
+    margin: 0.2em 0;
 }
 h5 { 
     font-size: clamp(1.2rem, 6vw, calc(var(--base-font-size) * var(--scale-factor) * 1.5));
-    font-family: 'Dancing Script', cursive;
+    font-family: 'titles', cursive;
     font-weight: 400;
+    margin: 0.1em 0;
 }
-
 h6 { 
     font-size: clamp(1rem, 5vw, calc(var(--base-font-size) * var(--scale-factor) * 1.2));
-    font-family: 'Dancing Script', cursive;
+    font-family: 'titles', cursive;
     font-weight: 300;
+    margin: 0.1em 0;
 }
 
 img {
@@ -297,6 +211,17 @@ img {
     shape-outside: circle();
     margin: 0 1rem 1rem 0;
 }
+
+#footer {
+    width: 100%;
+    padding: 1rem;
+    text-align: left;
+    font-size: var(--footer-font-size);
+    color: var(--footer-color);
+    background-color: rgba(255, 255, 255, 0.9);
+    border-top: 1px solid #e0e0e0;
+}
+
 
 @media print {
     #layout-menu {
@@ -313,5 +238,9 @@ img {
         float: none;
         border-radius: 0;
         margin: 0;
+    }
+    #footer {
+        position: static;
+        border-top: none;
     }
 }
