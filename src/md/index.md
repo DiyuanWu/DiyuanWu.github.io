@@ -9,7 +9,7 @@ I work in the field of (deep) machine learning theory, which includes two aspect
 
 - Understanding how attention-based models learn the latent structures in the data.
 
-- (Still exploring) Connections between continuous generative models (such as diffusion models) and autoregressive generative models (such as LLMs).
+- (Still exploring) Generative models such as diffusion models.
 
 ------
 
