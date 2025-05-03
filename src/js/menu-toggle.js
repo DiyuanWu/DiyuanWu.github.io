@@ -8,10 +8,10 @@ function initializeMenuState() {
     const isMobile = window.matchMedia('(max-width: 1000px)').matches;
     
     if (isMobile) {
-        menu.classList.remove('active');
+        menu.classList.remove('mobile-visible');
         body.classList.remove('menu-open');
     } else {
-        menu.classList.add('active');
+        menu.classList.add('mobile-visible');
         body.classList.remove('menu-open');
     }
 }
@@ -24,7 +24,7 @@ toggleButton.addEventListener('click', () => {
     const isMobile = window.matchMedia('(max-width: 1000px)').matches;
     
     if (isMobile) {
-        menu.classList.toggle('active');
+        menu.classList.toggle('mobile-visible');
         body.classList.toggle('menu-open');
     }
 });
