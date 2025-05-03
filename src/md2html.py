@@ -54,8 +54,9 @@ def convert_md_to_html(md_content, title, menu_items):
     
     # Replace single '-' with <br> for line breaks
     html_content = '\n'.join(
-        f'<br>{line[1:]}' if line.startswith('-') else line 
-        for line in html_content.split('\n') )
+        f'<br>{line[1:]}' if line.startswith('-') else line
+        for line in html_content.split('\n')
+    )
     
     # Get current year and month for update time
     current_time = datetime.now()
@@ -63,7 +64,7 @@ def convert_md_to_html(md_content, title, menu_items):
 
     # Create a safe dictionary for formatting
     format_dict = {
-        'my_title': "Diyuan Wu" if title.lower() == "index" else title,
+        'my_title': title,
         'my_menu_items': menu_items,
         'my_content': html_content,
         'my_update_time': update_time
