@@ -2,6 +2,9 @@
 
 Please also find my publications on my [Google scholar page](https://scholar.google.com/citations?user=MztcJLMAAAAJ&hl=zh-CN) or my [DBLP page](https://dblp.org/pid/284/7961.html)
 
+- "Attention with Trained Embeddings Provably Selects Important Tokens." **Diyuan Wu**\*, Aleksandr Shevchenko\*, Samet Oymak, Marco Mondelli. *Preprint 2025*  [arxiv](https://arxiv.org/abs/2505.17282)
+
+
 - "Neural Collapse Beyond the Unconstrained Features Model: Landscape, Dynamics, and Generalization in the Mean-Field Regime." **Diyuan Wu**, Marco Mondelli. *ICML 2025* (**spotlight**) [arxiv](https://arxiv.org/abs/2501.19104)
 
 
