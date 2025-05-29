@@ -10,6 +10,9 @@ I mainly work on machine learning theory. Specificly, my research works aim to: 
 
 - Understanding how attention-based model learn from structured data.
 
+&nbsp;
+
+
 #### Lastest updates
 
 **2025-05** New preprint on arXiv ["Attention with Trained Embeddings Provably Selects Important Tokens."](https://arxiv.org/abs/2505.17282) (Joint with Alex, Samet and Marco). 
