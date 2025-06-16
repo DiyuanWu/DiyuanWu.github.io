@@ -8,6 +8,8 @@ I mainly work on machine learning theory. Specificly, my research works aim to: 
 
 - Feature learning: how neural networks map data to features and learn features from data.
 
+- Weak-to-strong generalization: how strong student model supervised by weak teacher model perform better than teacher.
+
 &nbsp;
 
 
