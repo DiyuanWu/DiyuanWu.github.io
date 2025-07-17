@@ -15,7 +15,7 @@ I mainly work on machine learning theory. Specificly, my research works aim to: 
 
 #### Lastest updates
 
-**2025-06** Short version of ["Attention with Trained Embeddings Provably Selects Important Tokens."](https://arxiv.org/abs/2505.17282) accepted to [3rd Workshop on High-dimensional Learning Dynamics (HiLD) at ICML2025](https://sites.google.com/view/hidimlearning/home)
+**2025-06** Short version of ["Attention with Trained Embeddings Provably Selects Important Tokens."](https://arxiv.org/abs/2505.17282) accepted to [3rd Workshop on High-dimensional Learning Dynamics (HiLD) at ICML2025](https://sites.google.com/view/hidimlearning/home).
 
 **2025-05** New preprint on arXiv ["Attention with Trained Embeddings Provably Selects Important Tokens."](https://arxiv.org/abs/2505.17282) (Joint with Alex, Samet and Marco). 
 
