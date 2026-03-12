@@ -4,6 +4,8 @@ Please also find my publications on my [Google scholar page](https://scholar.goo
 
 \* indicates equal contribution.
 
+- **[Preprint]** "Improved Scaling Laws via Weak-to-Strong Generalization in Random Feature Ridge Regression." **Diyuan Wu**, Lehan Chen, Theodor Misiakiewicz, Marco Mondelli. [arxiv](https://arxiv.org/abs/2603.05691)
+
 - **[NeurIPS 2025]** "Attention with Trained Embeddings Provably Selects Important Tokens." **Diyuan Wu**\*, Aleksandr Shevchenko\*, Samet Oymak, Marco Mondelli.   [arxiv](https://arxiv.org/abs/2505.17282)
 
 

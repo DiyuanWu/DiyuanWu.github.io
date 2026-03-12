@@ -15,6 +15,10 @@ I mainly work on machine learning theory. Specificly, my research works aim to: 
 
 #### Lastest updates
 
+**2026-03** New preprint on arxiv ["Improved Scaling Laws via Weak-to-Strong Generalization in Random Feature Ridge Regression."](https://arxiv.org/abs/2603.05691). (Joint with Lehan, Theo and Marco).
+
+**2025-11 -- 2026-01** I visited [Lions](https://www.epfl.ch/labs/lions/people/) at EPFL!
+
 **2025-09** Our paper ["Attention with Trained Embeddings Provably Selects Important Tokens."](https://arxiv.org/abs/2505.17282) (joint with Alex, Samet, Marco) accepted to NeurIPS 25!
  
 **2025-06** Short version of ["Attention with Trained Embeddings Provably Selects Important Tokens."](https://arxiv.org/abs/2505.17282) accepted to [3rd Workshop on High-dimensional Learning Dynamics (HiLD) at ICML2025](https://sites.google.com/view/hidimlearning/home).
