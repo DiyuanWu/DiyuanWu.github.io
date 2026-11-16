@@ -2,7 +2,7 @@
 
 我的论文列表也可在 [Google Scholar](https://scholar.google.com/citations?user=MztcJLMAAAAJ&hl=zh-CN) 或 [DBLP](https://dblp.org/pid/284/7961.html) 上查看。
 
-\* 表示同等贡献。
+\* 表示共同作者。
 
 - **[Preprint 2026]** "Minimax-optimal Scaling Laws in Ridge Regression via Transfer Learning." [arxiv](http://arxiv.org/abs/2610.23337)<br>Yalda Shabanzadeh, **Diyuan Wu**,  Marco Mondelli.
 

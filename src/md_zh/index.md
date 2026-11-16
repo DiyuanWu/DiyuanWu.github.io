@@ -1,16 +1,16 @@
-# Diyuan Wu (吴迪远)
+# 吴迪远
 ![个人照片](./src/image/id_photo_white_bg_final.jpg)
 
-欢迎访问我的主页！我是 Diyuan Wu，目前是 [Institute of Science and Technology Austria (ISTA)](https://ist.ac.at/en/home/) 的博士生，自 2022 年秋季起有幸师从 [Marco Mondelli](http://marcomondelli.com/) 教授。攻读博士学位之前，我于 2022 年在瑞士洛桑的 [EPFL](https://www.epfl.ch/en/) 获得通信系统硕士学位，并于 2019 年在中国成都的 [UESTC (电子科大)](https://en.uestc.edu.cn/) 获得信息与通信工程学士学位。我的最新简历可以在[这里](https://drive.google.com/file/d/1PrUZtBdlb-NPoXDNgkdFQtmVU8mCE7cm/view?usp=sharing)查看。
+欢迎访问我的主页！我目前是 [Institute of Science and Technology Austria (ISTA)](https://ist.ac.at/en/home/) 的在读博士生，自 2022 年秋季起有幸师从 [Marco Mondelli](http://marcomondelli.com/) 教授。读博之前，我于 2022 年在[洛桑联邦理工 (EPFL)](https://www.epfl.ch/en/) 获得communication system硕士学位，并于 2019 年在 [电子科技大学](https://en.uestc.edu.cn/) 获得信息与通信工程学士学位。欢迎通过[此链接](https://drive.google.com/file/d/1PrUZtBdlb-NPoXDNgkdFQtmVU8mCE7cm/view?usp=sharing)查看我的最新简历。
 
 
-我的研究聚焦于以数据为中心的机器学习，主要关注训练数据的统计性质与规模如何影响模型学到的表征、泛化能力和规模规律。我的研究以理论分析为主：我运用高维统计工具和具有数学可解析性的模型来解释经验现象，并从中提炼更有效利用数据的原则。我尤其关注以下方向：
+我的研究聚焦于以数据为中心的机器学习，主要关注训练数据的统计性质与规模如何影响模型学到的表征、泛化能力和scaling law。我的研究以理论分析为主：我运用高维统计工具来分析简化的数学模型来解释经验现象，并从中提炼更有效利用数据的原则。我尤其关注以下方向：
 
-- 数据异质性与规模规律：数据质量、数据量、分布偏移、弱监督、数据混合和迁移学习如何影响测试误差。
+- 数据异质性与scaling：数据性质如何影响测试误差，特别是误差的scaling law。
 
 - 从数据中学习特征：神经网络和注意力模型如何学习结构化且与任务相关的表征。
 
-- 跨尺度的数据方案：基于小型代理模型做出的数据构成选择何时能够迁移到更大的模型。
+- 跨尺度的数据方案：数据方案能否或者如何跨尺度迁移。
 
 &nbsp;
 
@@ -36,6 +36,6 @@
 
 #### 联系方式
 
-我始终欢迎围绕相关研究主题展开讨论与合作，欢迎通过以下方式联系我：
+如果你也对相关的研究方向感兴趣，欢迎通过以下方式联系我：
 
 邮箱：diyuan.wu@ist.ac.at

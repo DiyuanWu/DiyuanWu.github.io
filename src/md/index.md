@@ -6,11 +6,11 @@ Welcome to my homepage! I am Diyuan Wu, a PhD student at the [Institute of Scien
 
 I work on data-centric machine learning, studying how the statistical properties and scale of training data shape learned representations, generalization, and scaling behavior. My approach is primarily theoretical: I use tools from high-dimensional statistics and mathematically tractable models to explain empirical phenomena and derive principles for more effective data use. I am particularly interested in:
 
-- Data heterogeneity and scaling laws: how data quality, quantity, distribution shift, weak supervision, data mixtures, and transfer learning affect test error.
+- Data heterogeneity and scaling laws: how data quality affect test error, especially the scaling law of test error.
 
 - Feature learning from data: how neural networks and attention models learn structured and task-relevant representations.
 
-- Data recipes across scales: when data-composition choices made with small proxy models transfer to larger models.
+- Data recipes across scales: whether data recipes transfer across scale, or how to transfer them.
 
 &nbsp;
 
