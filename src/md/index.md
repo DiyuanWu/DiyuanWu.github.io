@@ -1,19 +1,23 @@
-# Diyuan Wu
-![Profile Picture](./src/image/me_2026.png)
+# Diyuan Wu (吴迪远)
+![Profile Picture](./src/image/id_photo_white_bg_final.jpg)
 
-Welcome to my homepage! My name is Diyuan Wu (吴迪远  in Chinese), I'm currently a PhD student in [Institute of Science and Technology Austria (ISTA)](https://ist.ac.at/en/home/) starting from fall, 2022, fortunately working with Professor [Marco Mondelli](http://marcomondelli.com/). Prior to my PhD study, I received a master degree in communication system from [EPFL](https://www.epfl.ch/en/), Lausanne, Switzerland in 2022, and bachelor degree in information and communication engineering from [UESTC(电子科大)](https://en.uestc.edu.cn/), Chengdu, China in 2019. Please find my lastest CV [here](https://drive.google.com/file/d/1PrUZtBdlb-NPoXDNgkdFQtmVU8mCE7cm/view?usp=sharing).
+Welcome to my homepage! I am Diyuan Wu, a PhD student at the [Institute of Science and Technology Austria (ISTA)](https://ist.ac.at/en/home/), where I have been fortunate to work with Professor [Marco Mondelli](http://marcomondelli.com/) since fall 2022. Before beginning my PhD, I received a master's degree in Communication Systems from [EPFL](https://www.epfl.ch/en/) in Lausanne, Switzerland, in 2022, and a bachelor's degree in Information and Communication Engineering from [UESTC (电子科大)](https://en.uestc.edu.cn/) in Chengdu, China, in 2019. You can find my latest CV [here](https://drive.google.com/file/d/1PrUZtBdlb-NPoXDNgkdFQtmVU8mCE7cm/view?usp=sharing).
 
 
-I mainly work on machine learning theory. Specificly, my research works aim to: *(1) theoretically understand experimental phenomenons* and *(2) use theoretical insights to improve practical utility and efficiency.* I'm particularly interested in problems with **high-dimensional** data/models. Currently, I'm mainly working on:
+I work on data-centric machine learning, studying how the statistical properties and scale of training data shape learned representations, generalization, and scaling behavior. My approach is primarily theoretical: I use tools from high-dimensional statistics and mathematically tractable models to explain empirical phenomena and derive principles for more effective data use. I am particularly interested in:
 
-- Feature learning: how neural networks map data to features and learn features from data.
+- Data heterogeneity and scaling laws: how data quality, quantity, distribution shift, weak supervision, data mixtures, and transfer learning affect test error.
 
-- Weak-to-strong generalization: how strong student model supervised by weak teacher model perform better than teacher.
+- Feature learning from data: how neural networks and attention models learn structured and task-relevant representations.
+
+- Data recipes across scales: when data-composition choices made with small proxy models transfer to larger models.
 
 &nbsp;
 
 
 #### Lastest updates
+
+**2026-10** Two new preprints on arxiv ["When do data mixtures improve scaling laws? Insights from high-dimensional regression."](https://arxiv.org/abs/2609.38011) (Joint with Lehan, Theo and Marco), and ["Minimax-optimal Scaling Laws in Ridge Regression via Transfer Learning"](http://arxiv.org/abs/2610.23337) (Joint with Yalda and Marco).
 
 **2026-05** Our paper ["Improved Scaling Laws via Weak-to-Strong Generalization in Random Feature Ridge Regression."](https://arxiv.org/abs/2603.05691). (Joint with Lehan, Theo and Marco) accepted to ICML 26!
 

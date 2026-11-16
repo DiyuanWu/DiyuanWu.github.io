@@ -4,6 +4,10 @@ Please also find my publications on my [Google scholar page](https://scholar.goo
 
 \* indicates equal contribution.
 
+- **[Preprint 2026]** "Minimax-optimal Scaling Laws in Ridge Regression via Transfer Learning." Yalda Shabanzadeh, **Diyuan Wu**,  Marco Mondelli. [arxiv](http://arxiv.org/abs/2610.23337)
+
+- **[Preprint 2026]** "When do data mixtures improve scaling laws? Insights from high-dimensional regression." **Diyuan Wu**\*, Lehan Chen\*, Theodor Misiakiewicz, Marco Mondelli. [arxiv](https://arxiv.org/abs/2609.38011)
+
 - **[ICML 2025]** "Improved Scaling Laws via Weak-to-Strong Generalization in Random Feature Ridge Regression." **Diyuan Wu**, Lehan Chen, Theodor Misiakiewicz, Marco Mondelli. [arxiv](https://arxiv.org/abs/2603.05691)
 
 - **[NeurIPS 2025]** "Attention with Trained Embeddings Provably Selects Important Tokens." **Diyuan Wu**\*, Aleksandr Shevchenko\*, Samet Oymak, Marco Mondelli.   [arxiv](https://arxiv.org/abs/2505.17282)

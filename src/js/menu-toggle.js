@@ -1,33 +1,64 @@
-// Get references to the menu and toggle button
-const menu = document.getElementById('layout-menu');
-const toggleButton = document.getElementById('menu-toggle');
-const body = document.body;
+(() => {
+    const menu = document.getElementById("layout-menu");
+    const toggleButton = document.getElementById("menu-toggle");
+    const backdrop = document.getElementById("menu-backdrop");
+    const mobileViewport = window.matchMedia("(max-width: 54rem)");
 
-// Function to check mobile view and set initial state
-function initializeMenuState() {
-    const isMobile = window.matchMedia('(max-width: 1000px)').matches;
-    
-    if (isMobile) {
-        menu.classList.remove('mobile-visible');
-        body.classList.remove('menu-open');
+    if (!menu || !toggleButton) {
+        return;
+    }
+
+    const setMenuOpen = (open, returnFocus = false) => {
+        const shouldOpen = mobileViewport.matches && open;
+        menu.classList.toggle("mobile-visible", shouldOpen);
+        document.body.classList.toggle("menu-open", shouldOpen);
+        toggleButton.setAttribute("aria-expanded", String(shouldOpen));
+        toggleButton.setAttribute(
+            "aria-label",
+            shouldOpen ? "Close navigation" : "Open navigation"
+        );
+        menu.setAttribute(
+            "aria-hidden",
+            String(mobileViewport.matches && !shouldOpen)
+        );
+
+        if (!shouldOpen && returnFocus) {
+            toggleButton.focus();
+        }
+    };
+
+    const syncViewport = () => {
+        setMenuOpen(false);
+        if (!mobileViewport.matches) {
+            menu.removeAttribute("aria-hidden");
+        }
+    };
+
+    toggleButton.addEventListener("click", () => {
+        setMenuOpen(!menu.classList.contains("mobile-visible"));
+    });
+
+    if (backdrop) {
+        backdrop.addEventListener("click", () => setMenuOpen(false, true));
+    }
+
+    menu.addEventListener("click", (event) => {
+        if (event.target.closest("a") && mobileViewport.matches) {
+            setMenuOpen(false);
+        }
+    });
+
+    document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape" && menu.classList.contains("mobile-visible")) {
+            setMenuOpen(false, true);
+        }
+    });
+
+    if (typeof mobileViewport.addEventListener === "function") {
+        mobileViewport.addEventListener("change", syncViewport);
     } else {
-        menu.classList.add('mobile-visible');
-        body.classList.remove('menu-open');
+        mobileViewport.addListener(syncViewport);
     }
-}
 
-// Initialize menu state on page load
-initializeMenuState();
-
-// Add click event listener to toggle button
-toggleButton.addEventListener('click', () => {
-    const isMobile = window.matchMedia('(max-width: 1000px)').matches;
-    
-    if (isMobile) {
-        menu.classList.toggle('mobile-visible');
-        body.classList.toggle('menu-open');
-    }
-});
-
-// Update menu state when window is resized
-window.addEventListener('resize', initializeMenuState);
+    syncViewport();
+})();
