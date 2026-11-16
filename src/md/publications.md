@@ -4,23 +4,23 @@ Please also find my publications on my [Google scholar page](https://scholar.goo
 
 \* indicates equal contribution.
 
-- **[Preprint 2026]** "Minimax-optimal Scaling Laws in Ridge Regression via Transfer Learning." Yalda Shabanzadeh, **Diyuan Wu**,  Marco Mondelli. [arxiv](http://arxiv.org/abs/2610.23337)
+- **[Preprint 2026]** "Minimax-optimal Scaling Laws in Ridge Regression via Transfer Learning."<br>Yalda Shabanzadeh, **Diyuan Wu**,  Marco Mondelli. [arxiv](http://arxiv.org/abs/2610.23337)
 
-- **[Preprint 2026]** "When do data mixtures improve scaling laws? Insights from high-dimensional regression." **Diyuan Wu**\*, Lehan Chen\*, Theodor Misiakiewicz, Marco Mondelli. [arxiv](https://arxiv.org/abs/2609.38011)
+- **[Preprint 2026]** "When do data mixtures improve scaling laws? Insights from high-dimensional regression."<br>**Diyuan Wu**\*, Lehan Chen\*, Theodor Misiakiewicz, Marco Mondelli. [arxiv](https://arxiv.org/abs/2609.38011)
 
-- **[ICML 2025]** "Improved Scaling Laws via Weak-to-Strong Generalization in Random Feature Ridge Regression." **Diyuan Wu**, Lehan Chen, Theodor Misiakiewicz, Marco Mondelli. [arxiv](https://arxiv.org/abs/2603.05691)
+- **[ICML 2025]** "Improved Scaling Laws via Weak-to-Strong Generalization in Random Feature Ridge Regression."<br>**Diyuan Wu**, Lehan Chen, Theodor Misiakiewicz, Marco Mondelli. [arxiv](https://arxiv.org/abs/2603.05691)
 
-- **[NeurIPS 2025]** "Attention with Trained Embeddings Provably Selects Important Tokens." **Diyuan Wu**\*, Aleksandr Shevchenko\*, Samet Oymak, Marco Mondelli.   [arxiv](https://arxiv.org/abs/2505.17282)
-
-
-- **[ICML 2025 spotlight]** "Neural Collapse Beyond the Unconstrained Features Model: Landscape, Dynamics, and Generalization in the Mean-Field Regime." **Diyuan Wu**, Marco Mondelli.  [arxiv](https://arxiv.org/abs/2501.19104)
+- **[NeurIPS 2025]** "Attention with Trained Embeddings Provably Selects Important Tokens."<br>**Diyuan Wu**\*, Aleksandr Shevchenko\*, Samet Oymak, Marco Mondelli.   [arxiv](https://arxiv.org/abs/2505.17282)
 
 
-- **[NeurIPS 2024]** "The Iterative Optimal Brain Surgeon: Faster Sparse Recovery by Leveraging Second-Order Information."  **Diyuan Wu**, Ionut-Vlad Modoranu, Mher Safaryan, Denis Kuznedelev, Dan Alistarh.    [arxiv](https://arxiv.org/abs/2408.17163)
+- **[ICML 2025 spotlight]** "Neural Collapse Beyond the Unconstrained Features Model: Landscape, Dynamics, and Generalization in the Mean-Field Regime."<br>**Diyuan Wu**, Marco Mondelli.  [arxiv](https://arxiv.org/abs/2501.19104)
 
 
-- **[TMLR 2023]** "Mean-field analysis for heavy ball methods: Dropout-stability, connectivity, and global convergence."  **Diyuan Wu**, Vyacheslav Kungurtsev, Marco Mondelli.  [openreview](https://openreview.net/forum?id=gZna3IiGfl)
+- **[NeurIPS 2024]** "The Iterative Optimal Brain Surgeon: Faster Sparse Recovery by Leveraging Second-Order Information."<br>**Diyuan Wu**, Ionut-Vlad Modoranu, Mher Safaryan, Denis Kuznedelev, Dan Alistarh.    [arxiv](https://arxiv.org/abs/2408.17163)
+
+
+- **[TMLR 2023]** "Mean-field analysis for heavy ball methods: Dropout-stability, connectivity, and global convergence."<br>**Diyuan Wu**, Vyacheslav Kungurtsev, Marco Mondelli.  [openreview](https://openreview.net/forum?id=gZna3IiGfl)
 
 
 
-- **[ISIT 2021]** "On conditional Sibson's $\alpha$-Mutual Information."  Amedeo Roberto Esposito, **Diyuan Wu**, Michael Gastpar.  [link](https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=9517944)
+- **[ISIT 2021]** "On conditional Sibson's $\alpha$-Mutual Information."<br>Amedeo Roberto Esposito, **Diyuan Wu**, Michael Gastpar.  [link](https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=9517944)
