@@ -34,7 +34,7 @@ HTML_TEMPLATE = Template(
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#f4f2ed">
+    <meta name="theme-color" content="#ffffff">
     <title>${document_title}</title>
     <link rel="stylesheet" href="styles.css">
     <script>
