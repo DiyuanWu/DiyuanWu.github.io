@@ -13,9 +13,11 @@
         menu.classList.toggle("mobile-visible", shouldOpen);
         document.body.classList.toggle("menu-open", shouldOpen);
         toggleButton.setAttribute("aria-expanded", String(shouldOpen));
+        const openLabel = toggleButton.dataset.openLabel || "Open navigation";
+        const closeLabel = toggleButton.dataset.closeLabel || "Close navigation";
         toggleButton.setAttribute(
             "aria-label",
-            shouldOpen ? "Close navigation" : "Open navigation"
+            shouldOpen ? closeLabel : openLabel
         );
         menu.setAttribute(
             "aria-hidden",

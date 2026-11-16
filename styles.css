@@ -73,7 +73,7 @@ body {
     margin: 0;
     background: var(--page-bg);
     color: var(--text);
-    font-family: "IBM Plex Serif", Georgia, "Times New Roman", "Noto Serif SC", serif;
+    font-family: "IBM Plex Serif", Georgia, "Times New Roman", "Noto Serif SC", "Songti SC", SimSun, serif;
     font-size: 1.0625rem;
     line-height: 1.72;
     text-rendering: optimizeLegibility;
@@ -116,6 +116,29 @@ button:focus-visible {
 .skip-link:focus {
     color: #fff;
     transform: translate(-50%, 0);
+}
+
+.language-switch {
+    position: absolute;
+    top: clamp(1.25rem, 3vh, 2rem);
+    right: 0;
+    z-index: 900;
+    padding: 0.32rem 0.72rem;
+    border: 1px solid var(--rule);
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.96);
+    color: var(--accent-dark);
+    font-family: "Roboto Condensed", "Microsoft YaHei", "PingFang SC", Arial, sans-serif;
+    font-size: 0.82rem;
+    font-weight: 600;
+    letter-spacing: 0.035em;
+    line-height: 1.35;
+    text-decoration: none;
+}
+
+.language-switch:hover {
+    border-color: rgba(40, 95, 131, 0.45);
+    background: var(--accent-soft);
 }
 
 #layout-wrapper {
@@ -180,7 +203,7 @@ button:focus-visible {
     padding: 0.5rem 0.75rem 0.5rem 1rem;
     border-radius: 0.2rem;
     color: var(--muted);
-    font-family: "Roboto Condensed", "Arial Narrow", Arial, sans-serif;
+    font-family: "Roboto Condensed", "Microsoft YaHei", "PingFang SC", "Arial Narrow", Arial, sans-serif;
     font-size: 0.88rem;
     font-weight: 600;
     letter-spacing: 0.075em;
@@ -213,6 +236,7 @@ button:focus-visible {
 }
 
 #layout-content {
+    position: relative;
     width: min(100%, var(--content-width));
     min-width: 0;
     padding: clamp(3.5rem, 8vh, 6rem) 0 2.5rem;
@@ -670,6 +694,7 @@ h4:hover .headerlink,
     #layout-menu,
     #menu-toggle,
     #menu-backdrop,
+    .language-switch,
     .skip-link {
         display: none !important;
     }
