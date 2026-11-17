@@ -1,10 +1,10 @@
 # 吴迪远
 ![个人照片](./src/image/id_photo_white_bg_final.jpg)
 
-欢迎访问我的主页！我目前是 [Institute of Science and Technology Austria (ISTA)](https://ist.ac.at/en/home/) 的在读博士生，自 2022 年秋季起有幸师从 [Marco Mondelli](http://marcomondelli.com/) 教授。读博之前，我于 2022 年在[洛桑联邦理工 (EPFL)](https://www.epfl.ch/en/) 获得communication system硕士学位，并于 2019 年在 [电子科技大学](https://en.uestc.edu.cn/) 获得信息与通信工程学士学位。欢迎通过[此链接](https://drive.google.com/file/d/1PrUZtBdlb-NPoXDNgkdFQtmVU8mCE7cm/view?usp=sharing)查看我的最新简历。
+欢迎访问我的主页！我目前是 [Institute of Science and Technology Austria (ISTA)](https://ist.ac.at/en/home/) 的博士生。自 2022 年秋季起，有幸计入 [Marco Mondelli](http://marcomondelli.com/) 教授的课题组。读博之前，我于 2022 年在[洛桑联邦理工 (EPFL)](https://www.epfl.ch/en/) 获得communication system硕士学位，并于 2019 年在 [电子科技大学](https://en.uestc.edu.cn/) 获得信息与通信工程学士学位。欢迎通过[此链接](https://drive.google.com/file/d/1PrUZtBdlb-NPoXDNgkdFQtmVU8mCE7cm/view?usp=sharing)查看我的最新简历。
 
 
-我的研究聚焦于以数据为中心的机器学习，主要关注训练数据的统计性质与规模如何影响模型学到的表征、泛化能力和scaling law。我的研究以理论分析为主：我运用高维统计工具来分析简化的数学模型来解释经验现象，并从中提炼更有效利用数据的原则。我尤其关注以下方向：
+我的研究聚焦于机器学习的数据，主要关注训练数据的统计性质与规模如何影响模型学到的表征、泛化能力和scaling law。我的研究以理论分析为主：我运用高维统计工具来分析简化的数学模型来解释经验现象，并从中提炼更有效利用数据的原则。我尤其关注以下方向：
 
 - 数据异质性与scaling：数据性质如何影响测试误差，特别是误差的scaling law。
 

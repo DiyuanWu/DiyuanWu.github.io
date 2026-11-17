@@ -1,1 +1,11 @@
-*.sh text eol=lf
+# Keep source and generated text files consistent across Windows and GitHub.
+*.sh   text eol=lf
+*.py   text eol=lf
+*.md   text eol=lf
+*.html text eol=lf
+*.css  text eol=lf
+*.js   text eol=lf
+*.svg  text eol=lf
+*.txt  text eol=lf
+.gitattributes text eol=lf
+.gitignore     text eol=lf
