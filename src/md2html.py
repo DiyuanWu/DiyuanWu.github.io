@@ -125,7 +125,7 @@ ENGLISH = LocaleConfig(
     site_nav_label="Site navigation",
     primary_nav_label="Primary navigation",
     footer_label="Last updated",
-    language_label="中文",
+    language_label="中文主页",
     language_aria_label="View this page in Chinese",
     alternate_lang="zh-CN",
 )
@@ -141,7 +141,7 @@ CHINESE = LocaleConfig(
     site_nav_label="网站导航",
     primary_nav_label="主导航",
     footer_label="最后更新",
-    language_label="English",
+    language_label="English Webpage",
     language_aria_label="查看本页英文版",
     alternate_lang="en",
 )
@@ -313,7 +313,7 @@ def navigation_label(page: Page, locale: LocaleConfig) -> str:
     if page.slug == "index":
         return "主页"
     if page.slug == "publications":
-        return "论文"
+        return "研究成果"
     if not page.is_fallback:
         return page.heading
     return filename_display_name(page.slug)
